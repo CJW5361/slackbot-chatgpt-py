@@ -13,7 +13,8 @@ app = App(
 )
 
 openai.api_key = os.environ.get("OPENAI_API_KEY")
-api_key = os.environ.get("OPENWEATHERMAP_API_KEY")
+api_key = 'd6ef07bbe71aeb6c052f95ea3aa90b18'
+
 def get_weather(city):
     url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric"
     response = requests.get(url)
