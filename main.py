@@ -24,7 +24,8 @@ def test(message, say):
 
 @app.event("message")
 def handle_direct_message(message, say):
-
+    user_input = message['text']
+    prompt = f"사용자가 다음과 같이 물었습니다: '{user_input}'. 적절한 대답은 무엇일까요?"
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=[{"role": "user", "content": f"{message['text']}"}]
