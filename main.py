@@ -71,9 +71,9 @@ def handle_direct_message(message, say):
     if text.endswith("날씨"):
         # "getWeatherInfo"로 시작하는 메시지를 처리합니다.
         # 메시지를 분리하여 지역 정보를 추출합니다.
-        parts = text.split()
-        if len(parts) >= 3:
-            location = " ".join(parts[0])  # "서울 군자동 날씨" 부분을 추출합니다.
+        parts = text.split(' ')
+        if len(parts) >= 0:
+            location = parts[0]  # "서울 군자동 날씨" 부분을 추출합니다.
             # 날씨 정보를 가져옵니다.
             weather_info = weather_parser.getWeatherInfo(location)
             # 날씨 정보를 Slack 메시지로 전송합니다.
